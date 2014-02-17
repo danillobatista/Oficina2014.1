@@ -29,4 +29,11 @@ public class AIPlayer : Player {
 		
 		base.TurnUpdate ();
 	}
+
+	// video 2 inicio
+	public override void TurnOnGUI()
+	{
+		base.TurnOnGUI();
+	}
+	//video 2 final
 }

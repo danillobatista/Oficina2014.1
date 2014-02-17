@@ -1,9 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\Desktop\New Unity Project\Assets\Standard Assets\Scripts\Menu\menuitens.js">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\GameManager.cs">
     <Files>
-      <File FileName="..\..\Desktop\New Unity Project\Assets\Standard Assets\Scripts\Vida\Vida.js" Line="49" Column="10" />
-      <File FileName="..\..\Desktop\New Unity Project\Assets\Standard Assets\Scripts\Menu\menuitens.js" Line="1" Column="1" />
+      <File FileName="Assets\scripts\UserPlayer.cs" Line="74" Column="70" />
+      <File FileName="Assets\scripts\GameManager.cs" Line="161" Column="3" />
+      <File FileName="Assets\scripts\TileHighlight.cs" Line="19" Column="34" />
+      <File FileName="Assets\scripts\Tile.cs" Line="17" Column="23" />
+      <File FileName="Assets\scripts\Player.cs" Line="9" Column="39" />
+      <File FileName="Assets\scripts\TilePath.cs" Line="18" Column="3" />
+      <File FileName="Assets\scripts\TilePathFinder.cs" Line="38" Column="98" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

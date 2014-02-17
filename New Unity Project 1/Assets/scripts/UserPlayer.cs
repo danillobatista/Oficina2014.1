@@ -11,20 +11,109 @@ public class UserPlayer : Player {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	
+	void Update () 
+	{
+		//video 2 inicio
+		if(GameManager.instance.players[GameManager.instance.currentPlayerIndex] == this)
+		{
+			changeColor(Color.green);
+		}
+		else
+		{
+			changeColor(Color.white);
+		}
+
+		if(HP <= 0)
+		{
+			transform.rotation = Quaternion.Euler(new Vector3(90,0,0));
+			changeColor(Color.red);
+		}
+		//video 2 final
 	}
 
-	public override void TurnUpdate (){
-		if(Vector3.Distance(moveDestination, transform.position) > 0.1f){
-			transform.position += (moveDestination - transform.position).normalized * moveSpeed * Time.deltaTime;
-
-			if(Vector3.Distance(moveDestination, transform.position) <= 0.1f){
-				transform.position = moveDestination;
-				GameManager.instance.nextTurn();
+	public override void TurnUpdate ()
+	{
+		if(positionQueue.Count > 0)
+		{
+			if(Vector3.Distance(positionQueue[0], transform.position) > 0.1f)
+			{
+				transform.position += (positionQueue[0] - transform.position).normalized * moveSpeed * Time.deltaTime;
+				
+				if(Vector3.Distance(positionQueue[0], transform.position) <= 0.1f)
+				{
+					transform.position = positionQueue[0];
+					positionQueue.RemoveAt(0);
+					if(positionQueue.Count == 0)
+					{
+						actionPoints--;//video 2
+					}
+				}
 			}
 		}
 
 		base.TurnUpdate ();
 	}
+
+	// video 2 inicio
+	public override void TurnOnGUI()
+	{
+
+		float buttonHeight = 50;
+		float buttonWidth = 150;
+
+		Rect buttonRect = new Rect(0, Screen.height - buttonHeight*3, buttonWidth, buttonHeight);
+
+		if(GUI.Button(buttonRect, "Move"))
+		{
+			if(!moving)
+			{
+				GameManager.instance.removeTilesHightlights();
+				moving = true;
+				attacking = false;
+				Debug.Log("movement: "+ movementPerActionPoint);
+				GameManager.instance.highlightTilesAt(gridPosition, Color.blue, 2);
+			}
+			else
+			{
+				moving = false;
+				attacking = false;
+				GameManager.instance.removeTilesHightlights();
+			}
+		}
+
+		/*buttonRect = new Rect(0, Screen.height - buttonHeight*2, buttonWidth, buttonHeight);
+
+		if(GUI.Button(buttonRect, "Attack"))
+		{
+			if(!attacking)
+			{
+				GameManager.instance.removeTilesHightlights();
+				moving = false;
+				attacking = true;
+				GameManager.instance.highlightTilesAt(gridPosition, Color.red, attackRange);
+			}
+			else
+			{
+				moving = false;
+				attacking = false;
+				GameManager.instance.removeTilesHightlights();
+			}
+
+		}*/
+
+		buttonRect = new Rect(0, Screen.height - buttonHeight*2, buttonWidth, buttonHeight);
+
+		if(GUI.Button(buttonRect, "End Turn"))
+		{
+			GameManager.instance.removeTilesHightlights();
+			actionPoints = 2;
+
+			moving = false;
+			attacking = false;
+
+			GameManager.instance.nextTurn();
+		}
+		base.TurnOnGUI();
+	}
+	//video 2 final
 }
