@@ -63,7 +63,7 @@ public class UserPlayer : Player {
 
 		Rect buttonRect = new Rect(0, Screen.height - buttonHeight*3, buttonWidth, buttonHeight);
 
-		if(GUI.Button(buttonRect, "Move"))
+		if(GUI.Button(buttonRect, "Mover"))
 		{
 			if(!moving)
 			{
@@ -103,7 +103,7 @@ public class UserPlayer : Player {
 
 		buttonRect = new Rect(0, Screen.height - buttonHeight*2, buttonWidth, buttonHeight);
 
-		if(GUI.Button(buttonRect, "End Turn"))
+		if(GUI.Button(buttonRect, "Esperar"))
 		{
 			GameManager.instance.removeTilesHightlights();
 			actionPoints = 2;
