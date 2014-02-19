@@ -10,9 +10,12 @@ public class GameManager : MonoBehaviour
 	public GameObject TilePrefab;
 	public GameObject UserPlayerPrefab;
 	public GameObject AIPlayerPrefab;
+	public GameObject PiramideObstaculoPrefab;
+	public GameObject PedraObstaculoPrefab;
 
 	public int mapSize = 11;
 
+	public List<GameObject> obstacles = new List<GameObject>();
 	public List<List<Tile>> map = new List<List<Tile>>();
 	public List<Player> players = new List<Player>();
 
@@ -26,6 +29,7 @@ public class GameManager : MonoBehaviour
 	// Use this for initialization
 	void Start () {
 		generateMap ();
+		generateObstacles();
 		generatePlayers ();
 	}
 	
@@ -53,7 +57,7 @@ public class GameManager : MonoBehaviour
 	public void highlightTilesAt(Vector2 originLocation, Color highlightColor, int distance)
 	{
 		Debug.Log ("d: "+distance);
-		List<Tile> highlightedTiles = TileHighlight.FindHighlights(map[(int)originLocation.x][(int)originLocation.y], distance);
+		List<Tile> highlightedTiles = TileHighlight.FindHighlights(map[(int)originLocation.x][(int)originLocation.y], 15);
 
 		foreach(Tile t in highlightedTiles)
 		{
@@ -154,6 +158,77 @@ public class GameManager : MonoBehaviour
 			}
 			map.Add(row);
 		}
+	}
+
+	void generateObstacles()
+	{
+		//piramide
+		obstacles.Add((GameObject)Instantiate(PiramideObstaculoPrefab, new Vector3(2.5f - Mathf.Floor(mapSize/2),1.5f,-0.5f + Mathf.Floor(mapSize/2)), Quaternion.Euler(new Vector3())));
+		map[2][0].impassible = true;
+		map[3][0].impassible = true;
+		map[2][1].impassible = true;
+		map[3][1].impassible = true;
+
+		//pedra
+		obstacles.Add((GameObject)Instantiate(PedraObstaculoPrefab, new Vector3(8.5f - Mathf.Floor(mapSize/2),1.5f,-1.5f + Mathf.Floor(mapSize/2)), Quaternion.Euler(new Vector3())));
+		map[9][1].impassible = true;
+
+		obstacles.Add((GameObject)Instantiate(PedraObstaculoPrefab, new Vector3(5.5f - Mathf.Floor(mapSize/2),1.5f,-5.5f + Mathf.Floor(mapSize/2)), Quaternion.Euler(new Vector3())));
+		map[6][5].impassible = true;
+
+		obstacles.Add((GameObject)Instantiate(PedraObstaculoPrefab, new Vector3(10.5f - Mathf.Floor(mapSize/2),1.5f,-14.5f + Mathf.Floor(mapSize/2)), Quaternion.Euler(new Vector3())));
+		map[11][14].impassible = true;
+
+		//barris
+		obstacles.Add((GameObject)Instantiate(PedraObstaculoPrefab, new Vector3(15.5f - Mathf.Floor(mapSize/2),1.5f,-15.5f + Mathf.Floor(mapSize/2)), Quaternion.Euler(new Vector3())));
+		map[16][15].impassible = true;
+
+		obstacles.Add((GameObject)Instantiate(PedraObstaculoPrefab, new Vector3(15.5f - Mathf.Floor(mapSize/2),1.5f,-13.5f + Mathf.Floor(mapSize/2)), Quaternion.Euler(new Vector3())));
+		map[16][13].impassible = true;
+
+		obstacles.Add((GameObject)Instantiate(PedraObstaculoPrefab, new Vector3(15.5f - Mathf.Floor(mapSize/2),1.5f,-2.5f + Mathf.Floor(mapSize/2)), Quaternion.Euler(new Vector3())));
+		map[16][2].impassible = true;
+
+		//arvores
+		obstacles.Add((GameObject)Instantiate(PiramideObstaculoPrefab, new Vector3(5.5f - Mathf.Floor(mapSize/2),1.5f,-0.5f + Mathf.Floor(mapSize/2)), Quaternion.Euler(new Vector3())));
+		map[5][0].impassible = true;
+		map[6][0].impassible = true;
+		map[5][1].impassible = true;
+		map[6][1].impassible = true;
+
+		obstacles.Add((GameObject)Instantiate(PiramideObstaculoPrefab, new Vector3(14.5f - Mathf.Floor(mapSize/2),1.5f,-0.5f + Mathf.Floor(mapSize/2)), Quaternion.Euler(new Vector3())));
+		map[14][0].impassible = true;
+		map[15][0].impassible = true;
+		map[14][1].impassible = true;
+		map[15][1].impassible = true;
+
+		obstacles.Add((GameObject)Instantiate(PiramideObstaculoPrefab, new Vector3(8.5f - Mathf.Floor(mapSize/2),1.5f,-18.5f + Mathf.Floor(mapSize/2)), Quaternion.Euler(new Vector3())));
+		map[8][18].impassible = true;
+		map[9][18].impassible = true;
+		map[8][19].impassible = true;
+		map[9][19].impassible = true;
+
+		obstacles.Add((GameObject)Instantiate(PiramideObstaculoPrefab, new Vector3(12.5f - Mathf.Floor(mapSize/2),1.5f,-18.5f + Mathf.Floor(mapSize/2)), Quaternion.Euler(new Vector3())));
+		map[12][18].impassible = true;
+		map[13][18].impassible = true;
+		map[12][19].impassible = true;
+		map[13][19].impassible = true;
+
+		//toco
+		obstacles.Add((GameObject)Instantiate(PiramideObstaculoPrefab, new Vector3(6.5f - Mathf.Floor(mapSize/2),1.5f,-13.5f + Mathf.Floor(mapSize/2)), Quaternion.Euler(new Vector3())));
+		map[6][13].impassible = true;
+		map[7][13].impassible = true;
+		map[6][14].impassible = true;
+		map[7][14].impassible = true;
+
+		//poço
+		obstacles.Add((GameObject)Instantiate(PiramideObstaculoPrefab, new Vector3(2.5f - Mathf.Floor(mapSize/2),1.5f,-16.5f + Mathf.Floor(mapSize/2)), Quaternion.Euler(new Vector3())));
+		map[2][16].impassible = true;
+		map[3][16].impassible = true;
+		map[2][17].impassible = true;
+		map[3][17].impassible = true;
+
+
 	}
 
 	void generatePlayers(){
