@@ -3,7 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Player : MonoBehaviour {
-	
+
+	public enum FaceSelection
+	{
+		FaceUp, FaceDown, FaceLeft, FaceRight
+	}
+
+	public FaceSelection faceSelection;
+
 	public Vector3 moveDestination;
 
 	public int movementPerActionPoint = 2;
@@ -60,5 +67,26 @@ public class Player : MonoBehaviour {
 	public void changeColor(Color cor)
 	{
 		transform.renderer.material.color = cor;
+	}
+
+	public void changeFace(FaceSelection faceSelection)
+	{
+		this.faceSelection = faceSelection;
+
+		switch(this.faceSelection)
+		{
+			case FaceSelection.FaceUp:	
+										transform.rotation = Quaternion.Euler(new Vector3(0,0,0));
+										break;
+			case FaceSelection.FaceDown:
+										transform.rotation = Quaternion.Euler(new Vector3(0,180,0));
+										break;
+			case FaceSelection.FaceLeft:
+										transform.rotation = Quaternion.Euler(new Vector3(0,270,0));
+										break;
+			case FaceSelection.FaceRight:
+										transform.rotation = Quaternion.Euler(new Vector3(0,90,0));
+										break;
+		}
 	}
 }

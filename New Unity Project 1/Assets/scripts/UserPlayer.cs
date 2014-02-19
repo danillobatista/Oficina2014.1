@@ -38,7 +38,12 @@ public class UserPlayer : Player {
 			if(Vector3.Distance(positionQueue[0], transform.position) > 0.1f)
 			{
 				transform.position += (positionQueue[0] - transform.position).normalized * moveSpeed * Time.deltaTime;
-				
+
+				if(transform.position.x < positionQueue[0].x && transform.position.z == positionQueue[0].z) changeFace(FaceSelection.FaceRight);
+				if(transform.position.x > positionQueue[0].x && transform.position.z == positionQueue[0].z) changeFace(FaceSelection.FaceLeft);
+				if(transform.position.x == positionQueue[0].x && transform.position.z < positionQueue[0].z) changeFace(FaceSelection.FaceUp);
+				if(transform.position.x == positionQueue[0].x && transform.position.z > positionQueue[0].z) changeFace(FaceSelection.FaceDown);
+
 				if(Vector3.Distance(positionQueue[0], transform.position) <= 0.1f)
 				{
 					transform.position = positionQueue[0];
