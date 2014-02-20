@@ -213,3 +213,15 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+
+####################
+# UNITY
+####################
+
+/Temp
+/obj
+/library
+*.csproj
+*.unityproj
+*.sln
