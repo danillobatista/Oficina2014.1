@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
 	public void highlightTilesAt(Vector2 originLocation, Color highlightColor, int distance)
 	{
 		Debug.Log ("d: "+distance);
-		List<Tile> highlightedTiles = TileHighlight.FindHighlights(map[(int)originLocation.x][(int)originLocation.y], 15);
+		List<Tile> highlightedTiles = TileHighlight.FindHighlights(map[(int)originLocation.x][(int)originLocation.y], distance);
 
 		foreach(Tile t in highlightedTiles)
 		{

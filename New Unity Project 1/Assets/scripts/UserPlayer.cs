@@ -3,7 +3,7 @@ using System.Collections;
 
 public class UserPlayer : Player {
 
-	public float moveSpeed = 10.0f;
+	public float moveSpeed = 1.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -76,7 +76,7 @@ public class UserPlayer : Player {
 				moving = true;
 				attacking = false;
 				Debug.Log("movement: "+ movementPerActionPoint);
-				GameManager.instance.highlightTilesAt(gridPosition, Color.blue, 2);
+				GameManager.instance.highlightTilesAt(gridPosition, Color.blue, 3);
 			}
 			else
 			{
