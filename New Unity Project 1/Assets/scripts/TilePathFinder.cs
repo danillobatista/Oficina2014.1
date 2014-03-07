@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+﻿//a
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
 public class TilePathFinder : MonoBehaviour 
 {
-	public static List<Tile> FindPath(Tile originTile, Tile destinationTile)
+	public static List<Tile> FindPath(Tile originTile, Tile destinationTile, bool ignoresPlayers)
 	{
 		List<Tile> closed = new List<Tile>();
 		List<TilePath> open = new List<TilePath>();
@@ -34,23 +35,18 @@ public class TilePathFinder : MonoBehaviour
 			foreach(Tile t in current.lastTile.neighbors)
 			{
 				if(t.impassible) continue;
-				if(!GameManager.instance.players[0].attacking && GameManager.instance.players[0].gridPosition == t.gridPosition) continue;
-				if(!GameManager.instance.players[1].attacking && GameManager.instance.players[1].gridPosition == t.gridPosition) continue;
-				if(!GameManager.instance.players[2].attacking && GameManager.instance.players[2].gridPosition == t.gridPosition) continue;
 
 				TilePath newTilePath = new TilePath(current);
 				newTilePath.addTile(t);
 				open.Add(newTilePath);
-				/*
-				foreach(Player p in GameManager.instance.players)
+
+				if(!ignoresPlayers)
 				{
-					if(p.gridPosition == t.gridPosition)
+					foreach(Player player in GameManager.instance.players)
 					{
-						open.RemoveAt(open.Count-1);
-						t.impassible = true;
+						if(t.gridPosition.Equals(player.gridPosition)) open.RemoveAt(open.Count-1);
 					}
 				}
-				*/
 			}
 		}
 		return null;
