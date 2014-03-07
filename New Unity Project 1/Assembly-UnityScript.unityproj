@@ -48,6 +48,8 @@
   <ItemGroup>
      <Compile Include="Assets\scripts\GlossaryBehavior.js" />
      <Compile Include="Assets\scripts\GlossaryControl.js" />
+     <Compile Include="Assets\scripts\InteractiveText.js" />
+     <Compile Include="Assets\scripts\NarratedText.js" />
      <Compile Include="Assets\scripts\StartingAnimation.js" />
      <Compile Include="Assets\scripts\TextControl.js" />
   </ItemGroup>

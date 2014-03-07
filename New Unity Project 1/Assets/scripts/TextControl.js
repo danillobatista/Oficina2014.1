@@ -7,8 +7,6 @@ var onPage1=false; // 4
 
 var onPage2=false; // 5
 
-
-
 var onCustomizar = false; // 2
 
 var onCreditos = false; // 3
@@ -16,6 +14,10 @@ var onCreditos = false; // 3
 var onCutscene1=false; // 6 
 
 var onReturnMenu=false; // 
+
+var confirmarPressed = false;
+
+var voltarInicioPressed = false;
 
 
 
@@ -66,11 +68,13 @@ function OnMouseDown()
  if(onReturnMenu)
  {
  Application.LoadLevel(1);
+ voltarInicioPressed = true;
  }
  
 if(onPage1)
 {
 Application.LoadLevel(4);
+confirmarPressed = true;
 }
  
 if(onPage2)
