@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿//a
+using UnityEngine;
 using System.Collections;
 
 public class UserPlayer : Player {
@@ -68,7 +69,7 @@ public class UserPlayer : Player {
 
 		Rect buttonRect = new Rect(0, Screen.height - buttonHeight*3, buttonWidth, buttonHeight);
 
-		if(GUI.Button(buttonRect, "Mover"))
+		if(GUI.Button(buttonRect, "Mover") && this.positionQueue.Count == 0)
 		{
 			if(!moving)
 			{
@@ -88,7 +89,7 @@ public class UserPlayer : Player {
 
 		/*buttonRect = new Rect(0, Screen.height - buttonHeight*2, buttonWidth, buttonHeight);
 
-		if(GUI.Button(buttonRect, "Attack"))
+		if(GUI.Button(buttonRect, "Attack") && this.positionQueue.Count == 0)
 		{
 			if(!attacking)
 			{
@@ -108,7 +109,7 @@ public class UserPlayer : Player {
 
 		buttonRect = new Rect(0, Screen.height - buttonHeight*2, buttonWidth, buttonHeight);
 
-		if(GUI.Button(buttonRect, "Esperar"))
+		if(GUI.Button(buttonRect, "Esperar") && this.positionQueue.Count == 0)
 		{
 			GameManager.instance.removeTilesHightlights();
 			actionPoints = 2;

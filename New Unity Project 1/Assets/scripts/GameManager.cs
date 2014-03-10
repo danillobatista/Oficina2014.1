@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿//a
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -46,7 +47,8 @@ public class GameManager : MonoBehaviour
 	}
 	//video 2 final
 
-	public void nextTurn(){
+	public void nextTurn()
+	{
 		if(currentPlayerIndex +1 < players.Count){
 			currentPlayerIndex++;
 		} else{
@@ -56,8 +58,7 @@ public class GameManager : MonoBehaviour
 
 	public void highlightTilesAt(Vector2 originLocation, Color highlightColor, int distance)
 	{
-		Debug.Log ("d: "+distance);
-		List<Tile> highlightedTiles = TileHighlight.FindHighlights(map[(int)originLocation.x][(int)originLocation.y], distance);
+		List<Tile> highlightedTiles = TileHighlight.FindHighlights(map[(int)originLocation.x][(int)originLocation.y], distance, false);
 
 		foreach(Tile t in highlightedTiles)
 		{
@@ -83,10 +84,9 @@ public class GameManager : MonoBehaviour
 			removeTilesHightlights();
 			players[currentPlayerIndex].moving = false;
 
-			foreach(Tile t in TilePathFinder.FindPath(map[(int)players[currentPlayerIndex].gridPosition.x][(int)players[currentPlayerIndex].gridPosition.y], destinationTile))
+			foreach(Tile t in TilePathFinder.FindPath(map[(int)players[currentPlayerIndex].gridPosition.x][(int)players[currentPlayerIndex].gridPosition.y], destinationTile, false))
 			{
 				players[currentPlayerIndex].positionQueue.Add(map[(int)t.gridPosition.x][(int)t.gridPosition.y].transform.position + 1.5f * Vector3.up);
-				Debug.Log (players[currentPlayerIndex].positionQueue[players[currentPlayerIndex].positionQueue.Count - 1].x);
 			}
 			players[currentPlayerIndex].gridPosition = destinationTile.gridPosition;
 		}
@@ -170,23 +170,23 @@ public class GameManager : MonoBehaviour
 		map[3][1].impassible = true;
 
 		//pedra
-		obstacles.Add((GameObject)Instantiate(PedraObstaculoPrefab, new Vector3(8.5f - Mathf.Floor(mapSize/2),1.5f,-1.5f + Mathf.Floor(mapSize/2)), Quaternion.Euler(new Vector3())));
+		obstacles.Add((GameObject)Instantiate(PedraObstaculoPrefab, new Vector3(9.0f - Mathf.Floor(mapSize/2),0.85f,-1.0f + Mathf.Floor(mapSize/2)), Quaternion.Euler(new Vector3())));
 		map[9][1].impassible = true;
 
-		obstacles.Add((GameObject)Instantiate(PedraObstaculoPrefab, new Vector3(5.5f - Mathf.Floor(mapSize/2),1.5f,-5.5f + Mathf.Floor(mapSize/2)), Quaternion.Euler(new Vector3())));
+		obstacles.Add((GameObject)Instantiate(PedraObstaculoPrefab, new Vector3(6.0f - Mathf.Floor(mapSize/2),0.85f,-5.0f + Mathf.Floor(mapSize/2)), Quaternion.Euler(new Vector3())));
 		map[6][5].impassible = true;
 
-		obstacles.Add((GameObject)Instantiate(PedraObstaculoPrefab, new Vector3(10.5f - Mathf.Floor(mapSize/2),1.5f,-14.5f + Mathf.Floor(mapSize/2)), Quaternion.Euler(new Vector3())));
+		obstacles.Add((GameObject)Instantiate(PedraObstaculoPrefab, new Vector3(11.0f - Mathf.Floor(mapSize/2),0.85f,-14.0f + Mathf.Floor(mapSize/2)), Quaternion.Euler(new Vector3())));
 		map[11][14].impassible = true;
 
 		//barris
-		obstacles.Add((GameObject)Instantiate(PedraObstaculoPrefab, new Vector3(15.5f - Mathf.Floor(mapSize/2),1.5f,-15.5f + Mathf.Floor(mapSize/2)), Quaternion.Euler(new Vector3())));
+		obstacles.Add((GameObject)Instantiate(PedraObstaculoPrefab, new Vector3(16.0f - Mathf.Floor(mapSize/2),0.85f,-15.0f + Mathf.Floor(mapSize/2)), Quaternion.Euler(new Vector3())));
 		map[16][15].impassible = true;
 
-		obstacles.Add((GameObject)Instantiate(PedraObstaculoPrefab, new Vector3(15.5f - Mathf.Floor(mapSize/2),1.5f,-13.5f + Mathf.Floor(mapSize/2)), Quaternion.Euler(new Vector3())));
+		obstacles.Add((GameObject)Instantiate(PedraObstaculoPrefab, new Vector3(16.0f - Mathf.Floor(mapSize/2),0.85f,-13.0f + Mathf.Floor(mapSize/2)), Quaternion.Euler(new Vector3())));
 		map[16][13].impassible = true;
 
-		obstacles.Add((GameObject)Instantiate(PedraObstaculoPrefab, new Vector3(15.5f - Mathf.Floor(mapSize/2),1.5f,-2.5f + Mathf.Floor(mapSize/2)), Quaternion.Euler(new Vector3())));
+		obstacles.Add((GameObject)Instantiate(PedraObstaculoPrefab, new Vector3(16.0f - Mathf.Floor(mapSize/2),0.85f,-2.0f + Mathf.Floor(mapSize/2)), Quaternion.Euler(new Vector3())));
 		map[16][2].impassible = true;
 
 		//arvores
@@ -252,8 +252,9 @@ public class GameManager : MonoBehaviour
 		//player.movementPerActionPoint = 3;
 		players.Add (player);
 
-		//AIPlayer aiplayer =  ((GameObject)Instantiate(AIPlayerPrefab, new Vector3(6 - Mathf.Floor(mapSize/2),1.5f, -4 + Mathf.Floor(mapSize/2)), Quaternion.Euler(new Vector3()))).GetComponent<AIPlayer>();
-		
-		//players.Add (aiplayer);
+		AIPlayer aiplayer =  ((GameObject)Instantiate(AIPlayerPrefab, new Vector3((mapSize - 1) - Mathf.Floor(mapSize/2),1.5f, -0 + Mathf.Floor(mapSize/2)), Quaternion.Euler(new Vector3()))).GetComponent<AIPlayer>();
+		aiplayer.playerName = "AI";
+		aiplayer.gridPosition = new Vector2(mapSize - 1,0);
+		players.Add (aiplayer);
 	}
 }
