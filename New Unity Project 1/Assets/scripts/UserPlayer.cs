@@ -4,7 +4,9 @@ using System.Collections;
 
 public class UserPlayer : Player {
 
+
 	public float moveSpeed = 1.0f;
+
 
 	// Use this for initialization
 	void Start () {

@@ -32,7 +32,6 @@ renderer.material.color = Color.white;
 
 function OnMouseDown(){
 renderer.material.color = Color.green;
-
 showingPopUp1 = !showingPopUp1;
 MovingGlossary();
 
@@ -70,7 +69,6 @@ bloc1.transform.position.y = bloc1.transform.position.y + 3;
 showingPopUp1 = !showingPopUp1;
 
 }
-
 
 function OnMouseUp(){
 renderer.material.color = Color.white;

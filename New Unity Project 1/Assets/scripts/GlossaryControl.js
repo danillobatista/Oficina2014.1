@@ -31,17 +31,18 @@ renderer.material.color = Color.white;
 }
 
 function OnMouseDown(){
+
 	renderer.material.color = Color.green;
 
 	popUp1Showing = !popUp1Showing;
 	//animatingGlossary();
-
 			 	//chamada do glossario
 
 }
 
 function OnMouseUp(){
 	renderer.material.color = Color.white;
+
 }
 /*
 function animatingGlossary() {
