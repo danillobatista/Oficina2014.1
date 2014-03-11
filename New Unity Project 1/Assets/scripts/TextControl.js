@@ -1,4 +1,5 @@
 ﻿
+<<<<<<< HEAD
 var isQuitButton=false; //
 
 var onBattle1=false; // 7
@@ -16,6 +17,19 @@ var onCreditos = false; // 3
 var onCutscene1=false; // 6 
 
 var onReturnMenu=false; // 
+=======
+var isQuitButton=false;
+
+var onBattle1=false;
+
+var onPage1=false;
+
+var onPage2=false;
+
+var onCutscene1=false;
+
+var onReturnMenu=false;
+>>>>>>> unificando as versões
 
 
 
@@ -44,6 +58,7 @@ function OnMouseDown()
  {
  Application.Quit();
  }
+<<<<<<< HEAD
  
  if(onCustomizar)
  {
@@ -62,6 +77,15 @@ function OnMouseDown()
  if(onCutscene1)
  {
  Application.LoadLevel(6);
+=======
+ if(onBattle1)
+ {
+ Application.LoadLevel(4);
+ }
+ if(onCutscene1)
+ {
+ Application.LoadLevel(3);
+>>>>>>> unificando as versões
  }
  if(onReturnMenu)
  {
@@ -70,12 +94,20 @@ function OnMouseDown()
  
 if(onPage1)
 {
+<<<<<<< HEAD
 Application.LoadLevel(4);
+=======
+Application.LoadLevel(1);
+>>>>>>> unificando as versões
 }
  
 if(onPage2)
 {
+<<<<<<< HEAD
  Application.LoadLevel(5);
+=======
+ Application.LoadLevel(2);
+>>>>>>> unificando as versões
 }
  
 renderer.material.color = Color.green;

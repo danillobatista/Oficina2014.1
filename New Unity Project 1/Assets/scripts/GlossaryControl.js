@@ -40,9 +40,12 @@ popUp1Showing = !popUp1Showing;
 
 }
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> unificando as versões
 function OnMouseUp(){
 renderer.material.color = Color.white;
 }

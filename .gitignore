@@ -19,6 +19,7 @@ ExportedObj/
  
 # -------------[ OS generated ]------------------------ #
 .DS_Store
+<<<<<<< HEAD
 .DS_Store?
 ._*
 .Spotlight-V100
@@ -26,3 +27,49 @@ ExportedObj/
 Icon?
 ehthumbs.db
 Thumbs.db
+=======
+
+
+#############
+## Python
+#############
+
+*.py[co]
+
+# Packages
+*.egg
+*.egg-info
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
+
+#Translations
+*.mo
+
+#Mr Developer
+.mr.developer.cfg
+
+
+####################
+# UNITY
+####################
+
+/Temp
+/obj
+/library
+*.csproj
+*.unityproj
+*.sln
+>>>>>>> unificando as versões

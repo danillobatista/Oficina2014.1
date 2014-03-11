@@ -1,15 +1,29 @@
 ﻿
 var showingPopUp1 = false;
+<<<<<<< HEAD
 var showingPopUp2 = false;
 
 var bloc1:GameObject;
 
+=======
+
+var startPoint = Vector3(3.809576,5.385019,-6.984188);
+var endPoint = Vector3(3.809576,2.475506,-6.984188);
+// 3.809576 5.385019 -6.984188 //  3.809576 2.475506 -6.984188
+//var duration:float = 1.0;
+
+//private var startTime:float;
+>>>>>>> unificando as versões
 
 function Start () {
 	  
     //startTime = Time.time;
 	print("I'm attached to " + transform.name);
+<<<<<<< HEAD
 	 
+=======
+	 transform.position = Vector3.MoveTowards(startPoint,endPoint,0.5 * Time.deltaTime);
+>>>>>>> unificando as versões
 }
 
 
@@ -25,6 +39,7 @@ renderer.material.color = Color.white;
 
 function OnMouseDown(){
 renderer.material.color = Color.green;
+<<<<<<< HEAD
 showingPopUp1 = !showingPopUp1;
 MovingGlossary();
 
@@ -59,6 +74,14 @@ bloc1.transform.position.y = bloc1.transform.position.y + 3;
 
 	}
 }
+=======
+
+showingPopUp1 = !showingPopUp1;
+
+}
+
+
+>>>>>>> unificando as versões
 
 function OnMouseUp(){
 renderer.material.color = Color.white;
