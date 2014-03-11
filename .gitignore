@@ -20,12 +20,16 @@ ExportedObj/
 # -------------[ OS generated ]------------------------ #
 .DS_Store
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 23c973873d1464030cab2e3ed02c85542c903efd
 .DS_Store?
 ._*
 .Spotlight-V100
 .Trashes
 Icon?
 ehthumbs.db
+<<<<<<< HEAD
 Thumbs.db
 =======
 
@@ -73,3 +77,6 @@ pip-log.txt
 *.unityproj
 *.sln
 >>>>>>> unificando as versões
+=======
+Thumbs.db
+>>>>>>> 23c973873d1464030cab2e3ed02c85542c903efd

@@ -41,11 +41,17 @@ popUp1Showing = !popUp1Showing;
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 
 =======
 >>>>>>> unificando as versões
+=======
+
+
+
+>>>>>>> 23c973873d1464030cab2e3ed02c85542c903efd
 function OnMouseUp(){
 renderer.material.color = Color.white;
 }

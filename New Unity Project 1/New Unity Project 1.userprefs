@@ -2,6 +2,7 @@
 <<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench />
+<<<<<<< HEAD
 =======
   <MonoDevelop.Ide.Workspace />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\GameManager.cs">
@@ -10,6 +11,8 @@
     </Files>
   </MonoDevelop.Ide.Workbench>
 >>>>>>> unificando as versões
+=======
+>>>>>>> 23c973873d1464030cab2e3ed02c85542c903efd
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

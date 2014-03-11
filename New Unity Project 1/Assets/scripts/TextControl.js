@@ -1,5 +1,8 @@
 ﻿
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 23c973873d1464030cab2e3ed02c85542c903efd
 var isQuitButton=false; //
 
 var onBattle1=false; // 7
@@ -17,6 +20,7 @@ var onCreditos = false; // 3
 var onCutscene1=false; // 6 
 
 var onReturnMenu=false; // 
+<<<<<<< HEAD
 =======
 var isQuitButton=false;
 
@@ -30,6 +34,8 @@ var onCutscene1=false;
 
 var onReturnMenu=false;
 >>>>>>> unificando as versões
+=======
+>>>>>>> 23c973873d1464030cab2e3ed02c85542c903efd
 
 
 
@@ -59,6 +65,9 @@ function OnMouseDown()
  Application.Quit();
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 23c973873d1464030cab2e3ed02c85542c903efd
  
  if(onCustomizar)
  {
@@ -77,6 +86,7 @@ function OnMouseDown()
  if(onCutscene1)
  {
  Application.LoadLevel(6);
+<<<<<<< HEAD
 =======
  if(onBattle1)
  {
@@ -86,6 +96,8 @@ function OnMouseDown()
  {
  Application.LoadLevel(3);
 >>>>>>> unificando as versões
+=======
+>>>>>>> 23c973873d1464030cab2e3ed02c85542c903efd
  }
  if(onReturnMenu)
  {
@@ -95,19 +107,27 @@ function OnMouseDown()
 if(onPage1)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 Application.LoadLevel(4);
 =======
 Application.LoadLevel(1);
 >>>>>>> unificando as versões
+=======
+Application.LoadLevel(4);
+>>>>>>> 23c973873d1464030cab2e3ed02c85542c903efd
 }
  
 if(onPage2)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  Application.LoadLevel(5);
 =======
  Application.LoadLevel(2);
 >>>>>>> unificando as versões
+=======
+ Application.LoadLevel(5);
+>>>>>>> 23c973873d1464030cab2e3ed02c85542c903efd
 }
  
 renderer.material.color = Color.green;
