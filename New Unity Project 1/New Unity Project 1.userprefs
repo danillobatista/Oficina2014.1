@@ -1,18 +1,12 @@
 ﻿<Properties>
-<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench />
-<<<<<<< HEAD
-=======
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\GameManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\TextControl.js">
     <Files>
-      <File FileName="Assets\scripts\GameManager.cs" Line="45" Column="1" />
+      <File FileName="Assets\scripts\GlossaryBehavior.js" Line="69" Column="1" />
+      <File FileName="Assets\scripts\GlossaryControl.js" Line="56" Column="3" />
+      <File FileName="Assets\scripts\TextControl.js" Line="82" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
->>>>>>> unificando as versões
-=======
->>>>>>> 23c973873d1464030cab2e3ed02c85542c903efd
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

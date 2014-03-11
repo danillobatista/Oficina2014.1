@@ -31,29 +31,17 @@ renderer.material.color = Color.white;
 }
 
 function OnMouseDown(){
-renderer.material.color = Color.green;
+	renderer.material.color = Color.green;
 
-popUp1Showing = !popUp1Showing;
-//animatingGlossary();
+	popUp1Showing = !popUp1Showing;
+	//animatingGlossary();
 
 			 	//chamada do glossario
 
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> unificando as versões
-=======
-
-
-
->>>>>>> 23c973873d1464030cab2e3ed02c85542c903efd
 function OnMouseUp(){
-renderer.material.color = Color.white;
+	renderer.material.color = Color.white;
 }
 /*
 function animatingGlossary() {
