@@ -1,5 +1,4 @@
-﻿//a
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -11,7 +10,7 @@ public class TileHighlight
 		
 	}
 
-	public static List<Tile> FindHighlights(Tile originTile, int movementPoints, bool ignoresPlayers)
+	public static List<Tile> FindHighlights(Tile originTile, int movementPoints)
 	{
 		List<Tile> closed = new List<Tile>();
 		List<TilePath> open = new List<TilePath>();
@@ -39,18 +38,22 @@ public class TileHighlight
 			foreach(Tile t in current.lastTile.neighbors)
 			{
 				if(t.impassible) continue;
+				if(!GameManager.instance.players[0].attacking && GameManager.instance.players[0].gridPosition == t.gridPosition) continue;
+				if(!GameManager.instance.players[1].attacking && GameManager.instance.players[1].gridPosition == t.gridPosition) continue;
+				if(!GameManager.instance.players[2].attacking && GameManager.instance.players[2].gridPosition == t.gridPosition) continue;
 
 				TilePath newTilePath = new TilePath(current);
 				newTilePath.addTile(t);
 				open.Add(newTilePath);
-
-				if(!ignoresPlayers)
+				/*
+				foreach(Player p in GameManager.instance.players)
 				{
-					foreach(Player player in GameManager.instance.players)
+					if(p.gridPosition == t.gridPosition)
 					{
-						if(t.gridPosition.Equals(player.gridPosition)) open.RemoveAt(open.Count-1);
+						open.RemoveAt(open.Count-1);
 					}
 				}
+				*/
 			}
 		}
 		closed.Remove(originTile);

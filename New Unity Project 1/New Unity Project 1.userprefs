@@ -1,10 +1,15 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\TextControl.js">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\InteractiveText.js">
     <Files>
-      <File FileName="Assets\scripts\GlossaryBehavior.js" Line="69" Column="1" />
-      <File FileName="Assets\scripts\GlossaryControl.js" Line="56" Column="3" />
-      <File FileName="Assets\scripts\TextControl.js" Line="82" Column="1" />
+      <File FileName="New Unity Project 1.sln" Line="1" Column="1" />
+      <File FileName="Assets\scripts\InteractiveText.js" Line="18" Column="1" />
+      <File FileName="Assets\scripts\InteractiveText.js" Line="1" Column="1" />
+      <File FileName="Assets\scripts\TextControl.js" Line="1" Column="1" />
+      <File FileName="Assets\scripts\GlossaryControl.js" Line="1" Column="1" />
+      <File FileName="Assets\scripts\GlossaryBehavior.js" Line="1" Column="1" />
+      <File FileName="Assets\scripts\StartingAnimation.js" Line="1" Column="1" />
+      <File FileName="Assets\scripts\NarratedText.js" Line="8" Column="32" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

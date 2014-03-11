@@ -1,12 +1,9 @@
-﻿//a
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class UserPlayer : Player {
 
-
-	public float moveSpeed = 1.0f;
-
+	public float moveSpeed = 10.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -71,7 +68,7 @@ public class UserPlayer : Player {
 
 		Rect buttonRect = new Rect(0, Screen.height - buttonHeight*3, buttonWidth, buttonHeight);
 
-		if(GUI.Button(buttonRect, "Mover") && this.positionQueue.Count == 0)
+		if(GUI.Button(buttonRect, "Mover"))
 		{
 			if(!moving)
 			{
@@ -79,7 +76,7 @@ public class UserPlayer : Player {
 				moving = true;
 				attacking = false;
 				Debug.Log("movement: "+ movementPerActionPoint);
-				GameManager.instance.highlightTilesAt(gridPosition, Color.blue, 3);
+				GameManager.instance.highlightTilesAt(gridPosition, Color.blue, 2);
 			}
 			else
 			{
@@ -91,7 +88,7 @@ public class UserPlayer : Player {
 
 		/*buttonRect = new Rect(0, Screen.height - buttonHeight*2, buttonWidth, buttonHeight);
 
-		if(GUI.Button(buttonRect, "Attack") && this.positionQueue.Count == 0)
+		if(GUI.Button(buttonRect, "Attack"))
 		{
 			if(!attacking)
 			{
@@ -111,7 +108,7 @@ public class UserPlayer : Player {
 
 		buttonRect = new Rect(0, Screen.height - buttonHeight*2, buttonWidth, buttonHeight);
 
-		if(GUI.Button(buttonRect, "Esperar") && this.positionQueue.Count == 0)
+		if(GUI.Button(buttonRect, "Esperar"))
 		{
 			GameManager.instance.removeTilesHightlights();
 			actionPoints = 2;
