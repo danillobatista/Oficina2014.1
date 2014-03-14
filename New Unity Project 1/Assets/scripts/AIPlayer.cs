@@ -142,6 +142,14 @@ public class AIPlayer : Player {
 	#region Chase State
 	public void AIStateChase()
 	{
+		foreach(Player player in GameManager.instance.players)
+		{
+			if(player.GetType() == typeof(UserPlayer) && currentTarget.playerName.Equals(player.playerName))
+			{
+				currentTarget = player;
+			}
+		}
+		
 		if(currentTarget.gridPosition.x == this.gridPosition.x + 1 && currentTarget.gridPosition.y == this.gridPosition.y ||
 		   currentTarget.gridPosition.x == this.gridPosition.x - 1 && currentTarget.gridPosition.y == this.gridPosition.y ||
 		   currentTarget.gridPosition.x == this.gridPosition.x && currentTarget.gridPosition.y == this.gridPosition.y - 1 ||
@@ -155,10 +163,8 @@ public class AIPlayer : Player {
 			if(timesCount == 0)
 			{
 				GameManager.instance.highlightTilesAt(this.gridPosition, Color.blue, 5);
-				int randomTile = Random.Range(0, GameManager.instance.map[(int)currentTarget.gridPosition.x][(int)currentTarget.gridPosition.y].neighbors.Count);
-				Tile destTile = GameManager.instance.map[(int)currentTarget.gridPosition.x][(int)currentTarget.gridPosition.y].neighbors[randomTile];
 
-				foreach(Tile t in TilePathFinder.FindPath(GameManager.instance.map[(int)this.gridPosition.x][(int)this.gridPosition.y], destTile, false))
+				foreach(Tile t in findBestPath())
 				{
 					if(positionQueue.Count < 5)
 					{
@@ -236,4 +242,33 @@ public class AIPlayer : Player {
 		}
 	}
 
+	public List<Tile> findBestPath()
+	{
+		List<List<Tile>> paths = new List<List<Tile>>();
+		foreach(Tile neighborsTile in GameManager.instance.map[(int)currentTarget.gridPosition.x][(int)currentTarget.gridPosition.y].neighbors)
+		{
+			if(GameManager.instance.map[(int)neighborsTile.gridPosition.x][(int)neighborsTile.gridPosition.y].impassible == false)
+			{
+				paths.Add(TilePathFinder.FindPath(GameManager.instance.map[(int)this.gridPosition.x][(int)this.gridPosition.y], neighborsTile, false));
+			}
+		}
+		if(paths.Count > 1)
+		{
+			for (int pivot = 0; pivot < paths.Count; pivot++)
+			{
+				for(int i = pivot + 1; i< paths.Count; i++)
+				{
+					if(paths[pivot].Count > paths[i].Count)
+					{
+						List<Tile> tempPaths = paths[pivot];
+						paths[pivot] = paths[i];
+						paths[i] = tempPaths;
+					}              
+				}
+			}
+		}
+
+		return paths [0];
+	}
+	
 }
