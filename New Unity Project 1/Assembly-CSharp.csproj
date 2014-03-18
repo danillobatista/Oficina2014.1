@@ -49,6 +49,7 @@
      <Compile Include="Assets\scripts\AIPlayer.cs" />
      <Compile Include="Assets\scripts\GameManager.cs" />
      <Compile Include="Assets\scripts\Player.cs" />
+     <Compile Include="Assets\scripts\Scripts do livro\SlideShow.cs" />
      <Compile Include="Assets\scripts\Tile.cs" />
      <Compile Include="Assets\scripts\TileHighlight.cs" />
      <Compile Include="Assets\scripts\TilePath.cs" />

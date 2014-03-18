@@ -46,12 +46,18 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\scripts\GlossaryBehavior.js" />
-     <Compile Include="Assets\scripts\GlossaryControl.js" />
-     <Compile Include="Assets\scripts\InteractiveText.js" />
-     <Compile Include="Assets\scripts\NarratedText.js" />
-     <Compile Include="Assets\scripts\StartingAnimation.js" />
-     <Compile Include="Assets\scripts\TextControl.js" />
+     <Compile Include="Assets\scripts\Scripts do livro\BGM.js" />
+     <Compile Include="Assets\scripts\Scripts do livro\GlossaryBehavior.js" />
+     <Compile Include="Assets\scripts\Scripts do livro\GlossaryControl.js" />
+     <Compile Include="Assets\scripts\Scripts do livro\InteractiveText.js" />
+     <Compile Include="Assets\scripts\Scripts do livro\IntroductionText.js" />
+     <Compile Include="Assets\scripts\Scripts do livro\MessageGiver.js" />
+     <Compile Include="Assets\scripts\Scripts do livro\NarratedText.js" />
+     <Compile Include="Assets\scripts\Scripts do livro\ObjectivesText.js" />
+     <Compile Include="Assets\scripts\Scripts do livro\QuizText.js" />
+     <Compile Include="Assets\scripts\Scripts do livro\Selection.js" />
+     <Compile Include="Assets\scripts\Scripts do livro\StartingAnimation.js" />
+     <Compile Include="Assets\scripts\Scripts do livro\TextControl.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
